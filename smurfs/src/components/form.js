@@ -25,9 +25,9 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div class="formCont">
-        <form class="form" onSubmit={this.submit}>
-          <label class="name" for="name">
+      <div className="formCont">
+        <form className="form" onSubmit={this.submit}>
+          <label className="name" htmlFor="name">
             Name:
           </label>
           <input
@@ -36,7 +36,7 @@ class Form extends React.Component {
             value={this.state.name}
             onChange={this.captureInput}
           />
-          <label class="age" for="age">
+          <label className="age" htmlFor="age">
             Age:
           </label>
           <input
@@ -45,7 +45,7 @@ class Form extends React.Component {
             value={this.state.age}
             onChange={this.captureInput}
           />
-          <label class="height" for="height">
+          <label className="height" htmlFor="height">
             Height:
           </label>
           <input

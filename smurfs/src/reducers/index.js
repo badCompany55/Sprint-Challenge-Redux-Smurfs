@@ -5,7 +5,7 @@
 //  Your initial/default state for this project could *Although does not have to* look a lot like this
 //
 //
-import {GETTINGSMURFS, ADDINGSMURF} from '../actions';
+import {GETTINGSMURFS, ADDINGSMURF, DELETINGSMURF} from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -33,10 +33,21 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state,
         smurfs: action.payload,
-        fetchingSmurfs: true,
-        addingSmurf: false,
+        fetchingSmurfs: false,
+        addingSmurf: true,
         updatingSmurf: false,
         deletingSmurf: false,
+        error: null,
+      };
+    }
+    case DELETINGSMURF: {
+      return {
+        ...state,
+        smurfs: action.payload,
+        fetchingSmurfs: false,
+        addingSmurf: false,
+        updatingSmurf: false,
+        deletingSmurf: true,
         error: null,
       };
     }

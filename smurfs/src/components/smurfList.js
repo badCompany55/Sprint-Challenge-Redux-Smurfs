@@ -17,7 +17,13 @@ class SmurfList extends React.Component {
       <div className="listCon">
         {this.props.smurfs.map(smurf => {
           return (
-            <Smurf name={smurf.name} age={smurf.age} height={smurf.height} />
+            <Smurf
+              key={smurf.id}
+              name={smurf.name}
+              age={smurf.age}
+              height={smurf.height}
+              id={smurf.id}
+            />
           );
         })}
       </div>

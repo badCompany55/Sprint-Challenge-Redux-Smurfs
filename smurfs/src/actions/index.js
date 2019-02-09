@@ -18,6 +18,7 @@ import axios from 'axios';
 
 export const GETTINGSMURFS = 'GETTINGSMURFS';
 export const ADDINGSMURF = 'ADDINGSMURF';
+export const DELETINGSMURF = 'DELETINGSMURF';
 
 export const getSmurfs = () => {
   return dispatch => {
@@ -39,6 +40,19 @@ export const addingSmurf = smurf => {
       .post('http://www.localhost:3333/smurfs', smurf)
       .then(res => {
         dispatch({type: ADDINGSMURF, payload: res.data});
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+};
+
+export const deletingSmurf = id => {
+  return dispatch => {
+    axios
+      .delete(`http://www.localhost:3333/smurfs/${id}`)
+      .then(res => {
+        dispatch({type: DELETINGSMURF, payload: res.data});
       })
       .catch(error => {
         console.log(error);
