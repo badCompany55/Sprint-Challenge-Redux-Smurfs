@@ -30,15 +30,30 @@ class Form extends React.Component {
           <label class="name" for="name">
             Name:
           </label>
-          <input id="name" type="text" onChange={this.captureInput} />
+          <input
+            id="name"
+            type="text"
+            value={this.state.name}
+            onChange={this.captureInput}
+          />
           <label class="age" for="age">
             Age:
           </label>
-          <input id="age" type="age" onChange={this.captureInput} />
+          <input
+            id="age"
+            type="age"
+            value={this.state.age}
+            onChange={this.captureInput}
+          />
           <label class="height" for="height">
             Height:
           </label>
-          <input id="height" type="text" onChange={this.captureInput} />
+          <input
+            id="height"
+            type="text"
+            value={this.state.height}
+            onChange={this.captureInput}
+          />
           <button>Submit</button>
         </form>
       </div>
