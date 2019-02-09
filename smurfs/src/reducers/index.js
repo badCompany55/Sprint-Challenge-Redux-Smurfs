@@ -5,7 +5,7 @@
 //  Your initial/default state for this project could *Although does not have to* look a lot like this
 //
 //
-import {GETTINGSMURFS} from '../actions';
+import {GETTINGSMURFS, ADDINGSMURF} from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -19,6 +19,17 @@ const initialState = {
 export const smurfReducer = (state = initialState, action) => {
   switch (action.type) {
     case GETTINGSMURFS: {
+      return {
+        ...state,
+        smurfs: action.payload,
+        fetchingSmurfs: true,
+        addingSmurf: false,
+        updatingSmurf: false,
+        deletingSmurf: false,
+        error: null,
+      };
+    }
+    case ADDINGSMURF: {
       return {
         ...state,
         smurfs: action.payload,

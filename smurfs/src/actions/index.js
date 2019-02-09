@@ -17,6 +17,7 @@
 import axios from 'axios';
 
 export const GETTINGSMURFS = 'GETTINGSMURFS';
+export const ADDINGSMURF = 'ADDINGSMURF';
 
 export const getSmurfs = () => {
   return dispatch => {
@@ -28,6 +29,19 @@ export const getSmurfs = () => {
       })
       .catch(err => {
         console.log(err);
+      });
+  };
+};
+
+export const addingSmurf = smurf => {
+  return dispatch => {
+    axios
+      .post('http://www.localhost:3333/smurfs', smurf)
+      .then(res => {
+        dispatch({type: ADDINGSMURF, payload: res.data});
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 };
